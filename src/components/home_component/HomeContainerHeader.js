@@ -42,6 +42,11 @@ const styles = makeStyles({
 const HomeContainerHeader = ({ data }) => {
   const { units } = useSelector((state) => state.weather)
   const { width } = useSelector((state) => state.width)
+  const classes = styles()
+
+  function capitalize(s) {
+    return s[0].toUpperCase() + s.slice(1)
+  }
 
   if (!data) {
     return <Loader />
@@ -54,11 +59,6 @@ const HomeContainerHeader = ({ data }) => {
     WeatherIcon,
     Link,
   } = data
-  const classes = styles()
-
-  function capitalize(s) {
-    return s[0].toUpperCase() + s.slice(1)
-  }
 
   return (
     <div>
