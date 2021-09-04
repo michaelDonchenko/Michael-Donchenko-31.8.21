@@ -14,8 +14,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setWidth } from './redux/reducers/widthSlice'
 
 const App = () => {
-  setFavorites()
-
   const { theme } = useSelector((state) => state.theme)
   const appliedTheme = createTheme(theme ? dark : light)
   const dispatch = useDispatch()
@@ -23,6 +21,10 @@ const App = () => {
   const handleResize = () => {
     dispatch(setWidth(window.innerWidth))
   }
+
+  useEffect(() => {
+    setFavorites()
+  }, [])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
