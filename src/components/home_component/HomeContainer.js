@@ -23,11 +23,11 @@ const HomeContainer = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getConditions(cityId))
+    !currentConditions && dispatch(getConditions(cityId))
   }, [])
 
   useEffect(() => {
-    dispatch(getfiveDaysForcast(cityId))
+    !fiveDaysForcast && dispatch(getfiveDaysForcast(cityId))
   }, [])
 
   return loading ? (
