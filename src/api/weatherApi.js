@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://dataservice.accuweather.com'
+const baseUrl = 'https://dataservice.accuweather.com'
 
 const apiKey = process.env.REACT_APP_API_KEY
 
